@@ -2,7 +2,7 @@ class CashRegister
   attr_accessor :total, :discount
   @@cart = []
 
-  def initialize(discount = 20)
+  def initialize(discount = 0)
     @total = 0
     @discount = discount
   end
@@ -12,7 +12,7 @@ class CashRegister
   end
 
   def apply_discount
-    new_total = @total % @discount
+    new_total = @total / @discount
     "After the discount, the total comes to $#{new_total}."
   end
 
